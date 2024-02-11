@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"   lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div style="padding-left: 90%">
+    <form th:action="@{/logout}" th:method="POST">
+        <input style="border-radius: 10px; border-color: white" type="submit" value="Sign Out"/>
+    </form>
+</div>
+<a th:text ="${uname}" style="font-weight: bold; padding-bottom: 10%"/><a>, здравствуй, это ваш личный кабинет</a>
+<br>
+<a style="margin-left: 10%" >Ваша история поиска:</a>
+<br>
+<div th:each="el : ${uHistory}" style="padding-leaft: 8%;text-align: center">
+    <table style="width: 30%; margin-left: 10%">
+        <tr>
+            <th>
+                <div style=" width: 100%;padding: 0.5%;margin-bottom: 10%;  border-radius: 15%; border: paleturquoise; background-color: paleturquoise; border-style: solid">
+                    <a th:text="${el.historyName}"/> <a> Тип поиска - </a><a th:text="${el.tSearch}"/> <br>
+                    <a>Максимальная цена - </a><a th:text="${el.maxPrice}"/><br>
+                    <a>Минимальная цена - </a><a th:text="${el.minPrice}"/>
+                </div>
+            </th>
+            <th>
+                <form>
+                    <input  type="hidden" name="historyName" th:value ="${el.historyName}">
+                    <button type="submit" style="border-radius: 10px;border-color: white ;width: 110px; margin-bottom: 5%">Просмотреть</button>
+                </form>
+            </th>
+        </tr>
+    </table>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

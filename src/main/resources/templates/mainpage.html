@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container marketing " >
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row" style="padding-left: 10%; padding-top: 3%; ">
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <h2 class="fw-normal">Наш поиск</h2>
+            <p>Используя наш сервис вы можете использовать несколько видов поиска</p>
+            <p><a class="btn btn-secondary" href="/parser">Перейти</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <h2 class="fw-normal">Актуальные новости</h2>
+            <p>Еще одна прекрасная возможность сервиса - публикация актуальных новостей в области торговли</p>
+            <p><a class="btn btn-secondary" href="/info">Перейти</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+            <h2 class="fw-normal">База магазинов</h2>
+            <p>Здесь вы можете посмотреть, какие магазины имеются в нашей базе</p><br>
+            <p><a class="btn btn-secondary" href="/base">Перейти</a></p>
+        </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+</div>
+
+    <footer th:insert="blocks/footer :: footer" style="padding-top: 13%"></footer>
+
+</body>
+</html>
